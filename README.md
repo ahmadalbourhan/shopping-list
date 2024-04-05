@@ -23,4 +23,4 @@ This is a simple Progressive Web App (PWA) for managing your shopping list. It u
 
 ## Link
 
-[Shopping List]()
+[Shopping List](https://ahmadalbourhan.github.io/shopping-list/)
