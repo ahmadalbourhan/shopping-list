@@ -7,18 +7,19 @@ const shoppingListEl = document.getElementById("shopping-list");
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value.trim(); // Trim whitespace from input
   if (inputValue !== "") {
-    if (!shoppingList.includes(inputValue)) {
-      // Check if the item is not already in the list
+    let lowercaseInput = inputValue.toLowerCase(); // Convert input to lowercase
+    if (!shoppingList.some((item) => item.toLowerCase() === lowercaseInput)) {
+      // Check if any item in the list matches the input (case-insensitive)
       shoppingList.push(inputValue);
       localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
       renderShoppingList();
       inputFieldEl.value = "";
     } else {
-      alert("This item is already in the list."); // Alert the user if the item already exists
+      alert("This item is already in the list.");
       inputFieldEl.value = "";
     }
   } else {
-    alert("Please enter a valid item."); // Alert the user if the input is empty
+    alert("Please enter a valid item.");
   }
 });
 
